@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Тошев Дониёр — Frontend / Fullstack Developer" />
+    <title>Тошев Дониёр — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="theme-dark">
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__inner">
+        <div class="loader__ring"></div>
+        <span class="loader__text">Loading</span>
+      </div>
+    </div>
+
+    <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#hero" class="nav__logo" data-i18n="logo">Portfolio</a>
+        <ul class="nav__list" id="navList">
+          <li><a href="#hero" class="nav__link" data-nav="hero" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about" class="nav__link" data-nav="about" data-i18n="nav_about">About</a></li>
+          <li><a href="#skills" class="nav__link" data-nav="skills" data-i18n="nav_skills">Skills</a></li>
+          <li><a href="#services" class="nav__link" data-nav="services" data-i18n="nav_services">Services</a></li>
+          <li><a href="#projects" class="nav__link" data-nav="projects" data-i18n="nav_projects">Projects</a></li>
+          <li><a href="#contact" class="nav__link" data-nav="contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+        <div class="nav__actions">
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" class="lang-switch__btn is-active" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" class="lang-switch__btn" data-lang="ru" aria-pressed="false">RU</button>
+          </div>
+          <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <span class="theme-toggle__track">
+              <span class="theme-toggle__thumb"></span>
+            </span>
+          </button>
+          <button type="button" class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container hero__grid">
+          <div class="hero__content reveal" data-reveal>
+            <p class="hero__eyebrow" data-i18n="hero_eyebrow">Available for work</p>
+            <h1 class="hero__title">
+              <span class="hero__name" data-i18n="hero_name">Тошев Дониёр</span>
+              <span class="hero__role gradient-text" data-i18n="hero_role">Frontend / Fullstack Developer</span>
+            </h1>
+            <p class="hero__desc" data-i18n="hero_desc">
+              Возраст 16 · Информатика и программирование · Создаю интерфейсы и бэкенд. Стек: Node.js, HTML, CSS, JavaScript, React, Python, Django.
+            </p>
+            <div class="hero__tags">
+              <span>Node.js</span>
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>React.jsx</span>
+              <span>Python</span>
+              <span>Django</span>
+            </div>
+            <div class="hero__cta">
+              <a href="#projects" class="btn btn--primary ripple" data-i18n="hero_cta_projects">Projects</a>
+            </div>
+          </div>
+          <div class="hero__visual reveal" data-reveal>
+            <div class="hero__visual-stack">
+              <div class="hero__orb">
+                <img
+                  class="hero__photo"
+                  src="./assets/photo_2026-04-01_22-22-13.jpg"
+                  alt=""
+                  width="380"
+                  height="380"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="hero__card glass">
+                <div class="hero__stat">
+                  <span class="hero__stat-value">16</span>
+                  <span class="hero__stat-label" data-i18n="hero_stat_age">Years old</span>
+                </div>
+                <div class="hero__stat">
+                  <span class="hero__stat-value">5+</span>
+                  <span class="hero__stat-label" data-i18n="hero_stat_projects">Projects</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#about" class="hero__scroll" data-i18n="hero_scroll">Scroll</a>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container">
+          <header class="section-header reveal" data-reveal>
+            <span class="section-header__tag" data-i18n="about_tag">About</span>
+            <h2 class="section-header__title" data-i18n="about_title">Profile &amp; focus</h2>
+            <p class="section-header__subtitle" data-i18n="about_subtitle">Structured clarity — who I am, what I know, where I’m headed.</p>
+          </header>
+          <div class="about__grid">
+            <article class="about-card glass reveal" data-reveal>
+              <div class="about-card__icon" aria-hidden="true">◇</div>
+              <h3 class="about-card__title" data-i18n="about_who_title">Who I am</h3>
+              <p class="about-card__text" data-i18n="about_who_text">
+                I’m a developer who cares about craft: typography, motion, and performance. I enjoy turning complex ideas into calm, intuitive products.
+              </p>
+            </article>
+            <article class="about-card glass reveal" data-reveal>
+              <div class="about-card__icon" aria-hidden="true">◈</div>
+              <h3 class="about-card__title" data-i18n="about_know_title">What I know</h3>
+              <p class="about-card__text" data-i18n="about_know_text">
+                Modern JavaScript, React, Node.js, REST APIs, Python &amp; Django, semantic HTML, scalable CSS, Git workflows, and pragmatic UI/UX decisions.
+              </p>
+            </article>
+            <article class="about-card glass reveal" data-reveal>
+              <div class="about-card__icon" aria-hidden="true">◆</div>
+              <h3 class="about-card__title" data-i18n="about_exp_title">Experience</h3>
+              <p class="about-card__text" data-i18n="about_exp_text">
+                From coursework and personal builds to collaborative projects: shipping features, iterating on feedback, and learning production-minded patterns every week.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills section" id="skills">
+        <div class="container">
+          <header class="section-header reveal" data-reveal>
+            <span class="section-header__tag" data-i18n="skills_tag">Skills</span>
+            <h2 class="section-header__title" data-i18n="skills_title">Stack &amp; depth</h2>
+            <p class="section-header__subtitle" data-i18n="skills_subtitle">Animated proficiency — tuned for a premium feel.</p>
+          </header>
+          <div class="skills__list">
+            <div class="skill-row reveal" data-reveal>
+              <div class="skill-row__head"><span>Node.js</span><span class="skill-row__pct">92%</span></div>
+              <div class="skill-row__bar"><span class="skill-row__fill" data-width="92"></span></div>
+            </div>
+            <div class="skill-row reveal" data-reveal>
+              <div class="skill-row__head"><span>HTML</span><span class="skill-row__pct">98%</span></div>
+              <div class="skill-row__bar"><span class="skill-row__fill" data-width="98"></span></div>
+            </div>
+            <div class="skill-row reveal" data-reveal>
+              <div class="skill-row__head"><span>CSS</span><span class="skill-row__pct">95%</span></div>
+              <div class="skill-row__bar"><span class="skill-row__fill" data-width="95"></span></div>
+            </div>
+            <div class="skill-row reveal" data-reveal>
+              <div class="skill-row__head"><span>JavaScript</span><span class="skill-row__pct">94%</span></div>
+              <div class="skill-row__bar"><span class="skill-row__fill" data-width="94"></span></div>
+            </div>
+            <div class="skill-row reveal" data-reveal>
+              <div class="skill-row__head"><span>React.jsx</span><span class="skill-row__pct">90%</span></div>
+              <div class="skill-row__bar"><span class="skill-row__fill" data-width="90"></span></div>
+            </div>
+            <div class="skill-row reveal" data-reveal>
+              <div class="skill-row__head"><span>Python</span><span class="skill-row__pct">88%</span></div>
+              <div class="skill-row__bar"><span class="skill-row__fill" data-width="88"></span></div>
+            </div>
+            <div class="skill-row reveal" data-reveal>
+              <div class="skill-row__head"><span>Django</span><span class="skill-row__pct">85%</span></div>
+              <div class="skill-row__bar"><span class="skill-row__fill" data-width="85"></span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services section" id="services">
+        <div class="container">
+          <header class="section-header reveal" data-reveal>
+            <span class="section-header__tag" data-i18n="services_tag">Services</span>
+            <h2 class="section-header__title" data-i18n="services_title">What I can do</h2>
+            <p class="section-header__subtitle" data-i18n="services_subtitle">End-to-end delivery with polish.</p>
+          </header>
+          <div class="services__grid">
+            <article class="service-card glass reveal" data-reveal>
+              <span class="service-card__num">01</span>
+              <h3 class="service-card__title" data-i18n="service_1_title">Website development</h3>
+              <p class="service-card__text" data-i18n="service_1_text">Landing pages, dashboards, and marketing sites with performance and SEO in mind.</p>
+              <p class="service-card__price" data-i18n="service_1_price">From $100 (affordable &amp; high quality)</p>
+            </article>
+            <article class="service-card glass reveal" data-reveal>
+              <span class="service-card__num">02</span>
+              <h3 class="service-card__title" data-i18n="service_2_title">Telegram bots</h3>
+              <p class="service-card__text" data-i18n="service_2_text">Automation, notifications, and integrations inside Telegram ecosystems.</p>
+              <p class="service-card__price" data-i18n="service_2_price">From $70</p>
+            </article>
+            <article class="service-card glass reveal" data-reveal>
+              <span class="service-card__num">03</span>
+              <h3 class="service-card__title" data-i18n="service_3_title">Telegram Mini Apps</h3>
+              <p class="service-card__text" data-i18n="service_3_text">Lightweight web apps and Telegram Mini Apps with smooth UX.</p>
+              <p class="service-card__price" data-i18n="service_3_price">From $120</p>
+              <p class="service-card__note" data-i18n="service_3_note">Discount if you already have a Telegram bot</p>
+            </article>
+            <article class="service-card glass reveal" data-reveal>
+              <span class="service-card__num">04</span>
+              <h3 class="service-card__title" data-i18n="service_4_title">UI / UX design</h3>
+              <p class="service-card__text" data-i18n="service_4_text">Visual systems, micro-interactions, and component-ready specs.</p>
+            </article>
+            <article class="service-card glass reveal" data-reveal>
+              <span class="service-card__num">05</span>
+              <h3 class="service-card__title" data-i18n="service_5_title">API integrations</h3>
+              <p class="service-card__text" data-i18n="service_5_text">REST, webhooks, auth flows, and third-party services wired securely.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="projects section" id="projects">
+        <div class="container">
+          <header class="section-header reveal" data-reveal>
+            <span class="section-header__tag" data-i18n="projects_tag">Projects</span>
+            <h2 class="section-header__title" data-i18n="projects_title">Selected work</h2>
+            <!-- <p class="section-header__subtitle" data-i18n="projects_subtitle">Demo pieces plus a slot for your flagship build.</p> -->
+          </header>
+          <div class="projects__grid">
+            <article class="project-card glass reveal" data-reveal>
+              <div class="project-card__media">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" alt="" loading="lazy" width="800" height="500" />
+                <span class="project-card__badge" data-i18n="project_badge_demo">Demo</span>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title" data-i18n="project_1_title">Nebula Analytics UI</h3>
+                <p class="project-card__desc" data-i18n="project_1_desc">Dark-mode dashboard concept with glass panels and real-time charts placeholder.</p>
+                <div class="project-card__actions">
+                  <a href="#" class="btn btn--small btn--primary ripple" data-i18n="btn_live">Live</a>
+                  <a href="#" class="btn btn--small btn--ghost ripple" data-i18n="btn_github">GitHub</a>
+                </div>
+              </div>
+            </article>
+            <article class="project-card glass reveal" data-reveal>
+              <div class="project-card__media">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="" loading="lazy" width="800" height="500" />
+                <span class="project-card__badge" data-i18n="project_badge_demo">Demo</span>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title" data-i18n="project_2_title">Pulse Commerce</h3>
+                <p class="project-card__desc" data-i18n="project_2_desc">E-commerce front with motion-rich product cards and checkout flow mock.</p>
+                <div class="project-card__actions">
+                  <a href="#" class="btn btn--small btn--primary ripple" data-i18n="btn_live">Live</a>
+                  <a href="#" class="btn btn--small btn--ghost ripple" data-i18n="btn_github">GitHub</a>
+                </div>
+              </div>
+            </article>
+            <article class="project-card glass reveal project-card--highlight" data-reveal>
+              <div class="project-card__media">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80" alt="" loading="lazy" width="800" height="500" />
+                <span class="project-card__badge project-card__badge--real" data-i18n="project_badge_real">Your project</span>
+              </div>
+              <div class="project-card__body">
+                <h3 class="project-card__title" data-i18n="project_3_title">Your flagship project</h3>
+                <p class="project-card__desc" data-i18n="project_3_desc">Replace image, title, links, and description with your real case study.</p>
+                <div class="project-card__actions">
+                  <a href="#" class="btn btn--small btn--primary ripple" data-i18n="btn_live">Live</a>
+                  <a href="#" class="btn btn--small btn--ghost ripple" data-i18n="btn_github">GitHub</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="contact section" id="contact">
+        <div class="container">
+          <header class="section-header reveal" data-reveal>
+            <span class="section-header__tag" data-i18n="contact_tag">Connect</span>
+            <h2 class="section-header__title" data-i18n="contact_title">Contacts</h2>
+            <p class="section-header__subtitle" data-i18n="contact_subtitle">Ways to reach me — pick what’s convenient.</p>
+          </header>
+          <ul class="contact-list">
+            <li class="contact-item glass reveal" data-reveal>
+              <a href="tel:+998887019575" class="contact-item__link ripple" aria-label="Позвонить">
+                <span class="contact-item__label" data-i18n="contact_label_phone">Phone</span>
+                <span class="contact-item__value">+998&nbsp;88&nbsp;701&nbsp;95&nbsp;75</span>
+              </a>
+            </li>
+            <li class="contact-item glass reveal" data-reveal>
+              <a href="https://t.me/TDD_199" class="contact-item__link ripple" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <span class="contact-item__label" data-i18n="contact_label_tg">Telegram</span>
+                <span class="contact-item__value">@TDD_199</span>
+              </a>
+            </li>
+            <li class="contact-item glass reveal" data-reveal>
+              <a href="https://github.com/doniyor209" class="contact-item__link ripple" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <span class="contact-item__label" data-i18n="contact_label_gh">GitHub</span>
+                <span class="contact-item__value">doniyor209</span>
+              </a>
+            </li>
+            <li class="contact-item glass reveal" data-reveal>
+              <a href="https://instagram.com/gamervscreater123" class="contact-item__link ripple" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <span class="contact-item__label" data-i18n="contact_label_ig">Instagram</span>
+                <span class="contact-item__value">gamervscreater123</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__copy"><span data-i18n="footer_copy">© 2026</span> <span data-i18n="logo">Portfolio</span></p>
+        <a href="#hero" class="footer__top ripple" data-i18n="footer_top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
